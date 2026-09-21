@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv11';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    @apply bg-coral text-paper;
+  }
+
+  /* A guaranteed, visible focus ring for keyboard users everywhere. */
+  :focus-visible {
+    outline: 2px solid rgba(255, 107, 74, 0.9);
+    outline-offset: 2px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply tracking-tightest;
+  }
+}
+
+@layer utilities {
+  /* The grid — the signature motif. 1px lines over any surface. */
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgba(14, 17, 22, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14, 17, 22, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .grid-lines-sm {
+    background-image:
+      linear-gradient(to right, rgba(14, 17, 22, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14, 17, 22, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .grid-lines-strong {
+    background-image:
+      linear-gradient(to right, rgba(14, 17, 22, 0.09) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14, 17, 22, 0.09) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .grid-lines-light {
+    background-image:
+      linear-gradient(to right, rgba(247, 245, 240, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(247, 245, 240, 0.07) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .grid-lines-mint {
+    background-image:
+      linear-gradient(to right, rgba(15, 61, 46, 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 61, 46, 0.12) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Slow, seamless logo marquee. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 44s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Soft masks so grids fade out instead of ending hard. */
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
+
+  .mask-fade-t {
+    mask-image: linear-gradient(to top, black 55%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 55%, transparent 100%);
+  }
+
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
