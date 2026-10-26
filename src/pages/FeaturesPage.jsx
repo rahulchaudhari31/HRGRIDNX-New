@@ -11,7 +11,7 @@ export function FeaturesPage() {
         titleA={features.titleA}
         titleB={features.titleB}
         description={features.description}
-        note="9 modules · 29 permission keys · 1 dataset"
+        note="9 modules · 1 shared dataset"
       />
       <ModuleCatalog />
       <Cta />

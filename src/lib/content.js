@@ -3,10 +3,10 @@
  * ------------------------------------------------------------------ */
 /* ------------------------------------------------------------------ */
 export const brand = {
-    name: 'HRGRIDNX',
+    name: 'HRGridNX',
     wordmark: 'HR·GRID·NX',
-    tagline: 'Role-based HR, laid out on one grid.',
-    intro: 'HRGRIDNX is a role-based HR management platform. Six working roles share one source of truth — people, leave, attendance, tasks, payroll, expenses, documents and reports — arranged so every role only ever sees its own square of the grid.',
+    tagline: 'Every person. Every role. One grid.',
+    intro: 'HRGridNX brings your people, leave, attendance, tasks, payroll, and documents into one connected HR platform. Every team works from the same records, with access and responsibilities defined by their role.',
     email: 'hello@hrgridnx.com',
     phone: '+44 20 7946 0958',
     city: 'Shoreditch, London',
@@ -22,13 +22,13 @@ export const navLinks = [
 export const loginUrl = 'https://hrgridnx.elitepic.co.uk/login';
 /* ----------------------------- HOME: hero ----------------------------- */
 export const hero = {
-    eyebrow: 'Role-based HR management',
+    eyebrow: 'Connected HR platform',
     titleA: 'Every person.',
     titleB: 'Every role. One grid.',
-    description: 'Six working roles, one source of truth. Admin, HR, Department Head, Finance, Team Leader and Employee each get their own square — leave, attendance, payroll and headcount, never re-keyed.',
-    primary: { label: 'Start free trial', to: '/contact' },
-    secondary: { label: 'See how it works', to: '/features' },
-    trusted: 'Trusted by 120+ people-led teams',
+    description: 'HRGridNX brings your people, leave, attendance, tasks, payroll, and documents into one connected HR platform. Every team works from the same records, with access and responsibilities defined by their role.',
+    primary: { label: 'Start Free Trial', to: '/contact' },
+    secondary: { label: 'See How It Works', to: '/features' },
+    trusted: 'No card required to start your trial.',
 };
 export const stats = [
     { target: 10, suffix: 'k+', label: 'employees managed' },
@@ -52,108 +52,108 @@ export const modules = [
         id: 'employees',
         name: 'Employees',
         icon: 'users',
-        blurb: 'Every record, one directory — role, department and reporting line on every profile.',
-        detail: 'A single employee directory that replaces the shared spreadsheet. Each record carries its role, department, reporting line and status, and is created and maintained by the people who own it.',
+        blurb: 'One directory for every employee.',
+        detail: 'Maintain employee profiles, reporting lines, departments and employment status in a central directory. Authorised users can manage records according to their assigned permissions.',
         bullets: [
-            'Create, edit and archive records — permission-gated',
-            'Role, department and reporting line on every profile',
-            'One directory shared by every role that needs it',
+            'Create, update and archive employee profiles.',
+            'Maintain roles, departments and reporting lines.',
+            'Keep employee information accessible to authorised users.',
         ],
     },
     {
         id: 'departments',
         name: 'Departments',
         icon: 'building',
-        blurb: 'The org chart as a grid of teams, each with its head and budget.',
-        detail: 'Departments are first-class cells in the grid. Each has a head who owns its people, approvals and view of the work — so structure and responsibility stay aligned.',
+        blurb: 'Clear structure. Defined responsibility.',
+        detail: 'Organise your workforce into departments with named department heads. Keep team structures, ownership and departmental visibility connected.',
         bullets: [
-            'Department structures with named heads',
-            'Scoped views for every department leader',
-            'Budgets and headcount live at the department level',
+            'Define departments and their responsible heads.',
+            'Give department leaders access to relevant information.',
+            'Maintain departmental headcount and budget information where configured.',
         ],
     },
     {
         id: 'leave',
         name: 'Leave',
         icon: 'calendar-days',
-        blurb: 'Request, approve and track leave through clear two-level approval flows.',
-        detail: 'Leave moves through the grid at the right level — employee requests, level one approval from the team or department, level two where policy demands. Balances update themselves.',
+        blurb: 'Leave management without the chasing.',
+        detail: 'Allow employees to submit leave requests and check their balances while authorised managers review requests through the configured approval process.',
         bullets: [
-            'Self-service leave requests and balances',
-            'Two-level approval flows, coded per role',
-            'Live absence picture from every role’s view',
+            'Submit and review leave requests.',
+            'Configure one-level or two-level approval workflows.',
+            'View leave balances and absence information.',
         ],
     },
     {
         id: 'attendance',
         name: 'Attendance',
         icon: 'clock4',
-        blurb: 'Check-in, absence and coverage — the same pattern, seen from every role.',
-        detail: 'One attendance ledger, many vantage points. Employees check in, team leaders watch coverage, department heads spot patterns, and HR keeps the record of truth.',
+        blurb: 'A shared view of attendance.',
+        detail: 'Keep attendance records accessible to the people who need them. Employees can check in, team leaders can review team availability, and HR can maintain attendance records.',
         bullets: [
-            'Check-in and absence tracking',
-            'Coverage patterns for team leaders',
-            'Consistency for HR, honesty for finance',
+            'Record employee check-ins and absences.',
+            'Monitor team availability.',
+            'Maintain a consistent attendance record.',
         ],
     },
     {
         id: 'tasks',
         name: 'Tasks',
         icon: 'list-todo',
-        blurb: 'Assign and complete work items across the team, with live status.',
-        detail: 'From onboarding checklists to department delivery, tasks carry work through the grid. They are created, assigned and completed with full traceability.',
+        blurb: 'Keep work moving across the team.',
+        detail: 'Create, assign and track tasks within your organisation. Connect responsibilities to the relevant employees and departments to improve visibility of ongoing work.',
         bullets: [
-            'Create, assign and complete work items',
-            'Live status across the team',
-            'Tasks attach to people and departments',
+            'Create, assign and complete tasks.',
+            'Monitor task status and progress.',
+            'Link work items to employees and departments.',
         ],
     },
     {
         id: 'payroll',
         name: 'Payroll',
         icon: 'wallet',
-        blurb: 'Pay runs and payslips from clean records — no re-keying, ever.',
-        detail: 'Payroll runs against the same records everyone already maintains. Finance shapes a run, approves and releases it, and every employee sees their own payslip.',
+        blurb: 'Payroll built on shared records.',
+        detail: 'Manage payroll activities using employee information maintained within the platform. Finance can prepare and release pay runs, while employees can access their own payslips.',
         bullets: [
-            'Run, approve and release pay runs',
-            'Payslips issued straight to each employee',
-            'Net pay computed from one source of truth',
+            'Prepare, approve and release payroll runs.',
+            'Provide employees with access to their payslips.',
+            'Use shared employee records to reduce duplicate data entry.',
         ],
     },
     {
         id: 'expenses',
         name: 'Expenses',
         icon: 'receipt',
-        blurb: 'Submit, approve and report claims without chasing paper.',
-        detail: 'Expense claims flow from employee to approver to finance in the same pattern as leave — submitted, checked at the right level, released into payroll time.',
+        blurb: 'A clearer route from claim to approval.',
+        detail: 'Give employees a way to submit expense claims and route them to the appropriate approver and finance team.',
         bullets: [
-            'Self-service claim submission',
-            'Approval at the right level',
-            'Claims land cleanly for finance',
+            'Submit and review expense claims.',
+            'Route claims through configured approval levels.',
+            'Maintain records for finance review.',
         ],
     },
     {
         id: 'documents',
         name: 'Documents',
         icon: 'folder-open',
-        blurb: 'Contracts, policies and files — versioned and role-scoped.',
-        detail: 'Documents live where the grid says they do. Contracts are scoped to the people who may see them, policies publish to everyone, and sensitive files stay locked.',
+        blurb: 'Your documents, organised by access.',
+        detail: 'Keep employee documents, contracts and policies in a central location, with visibility controlled according to the document\'s sensitivity and the user\'s permissions.',
         bullets: [
-            'Upload and version contracts and policies',
-            'Role-scoped access to every file',
-            'Everything in one searchable library',
+            'Upload and manage documents.',
+            'Control access to sensitive files.',
+            'Keep contracts, policies and other records organised.',
         ],
     },
     {
         id: 'reports',
         name: 'Reports',
         icon: 'chart-column',
-        blurb: 'Operational and compliance reporting, cut to each role’s horizon.',
-        detail: 'Reports are cut to the responsibility of the viewer. A team leader sees the team, a department head sees the department, and compliance sees the whole.',
+        blurb: 'The right information for every responsibility.',
+        detail: 'Give managers access to reports relevant to their role, from team-level activity to wider organisational reporting.',
         bullets: [
-            'Operational and compliance reporting',
-            'Period-scoped views',
-            'One agreed dataset, no version arguments',
+            'View operational and compliance-related reports.',
+            'Filter reporting by relevant periods and responsibilities where supported.',
+            'Work from shared records to reduce conflicting versions of data.',
         ],
     },
 ];
@@ -162,9 +162,9 @@ export const roles = [
     {
         id: 'admin',
         name: 'Admin',
-        short: 'Runs the grid',
+        short: 'Platform and permissions',
         icon: 'crown',
-        summary: 'System administrator with full access.',
+        summary: 'Manage the platform, users and permissions.',
         view: 'Organisation home — security, integrations, invitations and the audit trail.',
         day: 'You own the shape of the grid. Mornings are short — a security check, a glance at the audit trail, a look at how the whole organisation is behaving today.',
         moments: [
@@ -178,9 +178,9 @@ export const roles = [
     {
         id: 'hr_manager',
         name: 'HR Manager',
-        short: 'Owns the people layer',
+        short: 'People, leave and HR documentation',
         icon: 'user-cog',
-        summary: 'Manages employees, leave and HR records end to end.',
+        summary: 'Maintain employee records, leave and HR documentation.',
         view: 'People home — approvals, onboarding and every employee in one place.',
         day: 'You own the people layer. Leave, onboarding and employee records all land in your square, and the day is about moving people’s requests along without chasing anyone.',
         moments: [
@@ -194,9 +194,9 @@ export const roles = [
     {
         id: 'department_head',
         name: 'Department Head',
-        short: 'Owns one cell',
+        short: 'Departmental people and approvals',
         icon: 'landmark',
-        summary: 'Owns one department and the team inside it.',
+        summary: 'Oversee departmental people, approvals and responsibilities.',
         view: 'Department home — approvals, budgets and performance in one view.',
         day: 'You only ever see your department. Coverage, budgets and approvals come together in one calm view of the cell you run — the whole grid, from your square.',
         moments: [
@@ -210,9 +210,9 @@ export const roles = [
     {
         id: 'finance_manager',
         name: 'Finance Manager',
-        short: 'Keeps the ledger honest',
+        short: 'Payroll, expenses and financial records',
         icon: 'scale',
-        summary: 'Runs payroll and expense approvals across the company.',
+        summary: 'Manage payroll, expenses and financial records.',
         view: 'Payroll home — the payroll cycle, expense claims and run history.',
         day: 'You keep the ledger honest. Payroll, expenses and payslips run from the records everyone already maintains — no re-keying, no reconciliation meetings.',
         moments: [
@@ -226,9 +226,9 @@ export const roles = [
     {
         id: 'team_leader',
         name: 'Team Leader',
-        short: 'Keeps one team moving',
+        short: 'Team tasks, attendance and leave',
         icon: 'users-round',
-        summary: 'Oversees a team, its tasks, attendance and leave.',
+        summary: 'Coordinate team tasks, attendance and leave.',
         view: 'Team home — leave to approve, live attendance and the team roster.',
         day: 'You keep one team moving. Tasks, attendance and leave sit in a single view, so you spot problems before they become meetings.',
         moments: [
@@ -242,9 +242,9 @@ export const roles = [
     {
         id: 'employee',
         name: 'Employee',
-        short: 'Works their own cell',
+        short: 'Personal information and payslips',
         icon: 'circle-user',
-        summary: 'Standard self-service employee access.',
+        summary: 'Access personal information, documents and payslips.',
         view: 'Home — the day at a glance: time, requests and what happens next.',
         day: 'You work your own cell. The day is simple — check in, see what is next, and know your leave, expenses and payslips are handled without chasing anyone.',
         moments: [
@@ -261,37 +261,42 @@ export const steps = [
     {
         number: '01',
         icon: 'rocket',
-        title: 'Set up',
-        body: 'Map your departments, teams and roles. Every person lands in exactly one cell of the grid, with a reporting line and a clear view from day one.',
+        title: 'Shape your grid',
+        body: "Set up your organisation's departments, reporting lines, user roles and permissions.",
     },
     {
         number: '02',
         icon: 'send',
-        title: 'Invite your team',
-        body: 'Each role arrives already scoped — permission keys switched on before anyone logs in. No per-person setup, no surprises.',
+        title: 'Bring your team in',
+        body: 'Invite employees, assign roles and give everyone access to the information they need.',
     },
     {
         number: '03',
         icon: 'workflow',
-        title: 'Run HR on autopilot',
-        body: 'Leave, attendance, tasks and payroll flow through the grid — requested, approved and released at the right level, every time.',
+        title: 'Run HR from one place',
+        body: "Manage everyday HR activities through connected modules, with visibility based on each person's responsibilities.",
     },
 ];
 export const security = [
     {
         icon: 'key-round',
         title: 'Role-based permissions',
-        body: 'Every screen sits behind a named permission key like leave.approve.level1 — a Department Head sees only their department, an Employee only their own file.',
+        body: 'Each user receives access according to their responsibilities, helping keep sensitive information restricted to the appropriate people.',
     },
     {
         icon: 'scroll-text',
-        title: 'Audit logs',
-        body: 'Who changed a record, when and under which role. The grid remembers everything, so stories stay straight at review time.',
+        title: 'Audit logs for traceability',
+        body: 'Activity is recorded so changes can be traced back to the responsible user.',
     },
     {
         icon: 'lock',
-        title: 'Data encryption',
-        body: 'Records are encrypted in transit and at rest, and role-scoped files stay locked to the people who may see them.',
+        title: 'Controlled access to sensitive documents',
+        body: 'Sensitive files are restricted to the people who are authorised to view them.',
+    },
+    {
+        icon: 'users-round',
+        title: 'Defined responsibilities across the organisation',
+        body: 'Every role has a clear scope of responsibility across the platform.',
     },
 ];
 /* ------------------------- HOME: testimonials --------------------------- */
@@ -314,18 +319,17 @@ export const testimonials = [
 ];
 /* ------------------------------- HOME: CTA ------------------------------ */
 export const cta = {
-    title: 'Put every role on the grid.',
-    body: 'Start free and watch six roles share one source of truth — leave, attendance, tasks, payroll and documents with no clutter between them.',
-    primary: { label: 'Start free trial', to: '/contact' },
-    secondary: { label: 'hello@hrgridnx.com', href: 'mailto:hello@hrgridnx.com' },
+    title: 'Every role on the grid.',
+    body: 'Start with HRGridNX and bring your people, leave, attendance, tasks, payroll and documents into one connected workspace.',
+    primary: { label: 'Start Free Trial', to: '/contact' },
+    secondary: { label: 'Contact Our Team', href: 'mailto:hello@hrgridnx.com' },
 };
 /* ---------------------------- FEATURES page ---------------------------- */
 export const features = {
     eyebrow: 'The features',
-    titleA: 'Nine modules,',
-    titleB: 'one dataset.',
-    description: 'The grid is built from nine working modules. Each has a name, a permission key and a place — and they all read from the same records, so nothing is ever re-keyed.',
-    permissionNote: 'Every module is guarded by named permission keys shared between the app and the API. That vocabulary is one of HRGRIDNX’s quiet strengths: what you can see is never a guess.',
+    titleA: 'Nine modules.',
+    titleB: 'One dataset.',
+    description: 'HRGridNX connects the essential processes of people management in one platform. Each module serves a specific purpose while sharing the records that keep your organisation aligned.',
 };
 /* ------------------------------ ROLES page ------------------------------ */
 export const rolesPage = {
@@ -513,8 +517,8 @@ export const contact = {
     ],
 };
 export const footer = {
-    tagline: 'HR·GRID·NX — role-based HR, laid out on one grid.',
-    blurb: 'People, leave, attendance, tasks, payroll, expenses, documents and reports — each role in its own square of the grid.',
+    tagline: 'HR·GRID·NX — every person. Every role. One grid.',
+    blurb: 'HRGridNX brings your people, leave, attendance, tasks, payroll and documents into one connected HR platform.',
     columns: [
         {
             title: 'Platform',
@@ -563,5 +567,5 @@ export const footer = {
         button: 'Subscribe',
         thanks: 'Thanks — you are on the grid.',
     },
-    legal: '© 2026 HRGRIDNX. Built on a grid.',
+    legal: '© 2026 HRGridNX. All rights reserved.',
 };

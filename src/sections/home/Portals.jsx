@@ -56,7 +56,7 @@ function PortalPreview({ role }) {
         <div className="mt-3 flex items-center justify-between rounded-xl border border-ink/[0.06] bg-paper/80 px-3 py-2.5">
           <span className="text-[11px] font-medium text-ink/60">Clearance</span>
           <span className={cn('rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider', accents[role.id])}>
-            {role.short}
+            {role.name}
           </span>
         </div>
       </div>
@@ -79,7 +79,7 @@ export function Portals() {
               <span className="italic text-deep">six portals</span>
             </>
           }
-          description="Six working roles, one product. Switch portal and the grid re-shapes itself — the modules a role owns, and the actions it may take."
+          description="Six working roles. One connected platform. Every person has a defined place within HRGridNX. From administrators managing permissions to employees checking their payslips, each role sees the information and actions relevant to their responsibilities."
         />
 
         <Reveal className="mt-14">
@@ -154,7 +154,7 @@ export function Portals() {
                       </div>
                     </div>
 
-                    <p className="text-sm leading-relaxed text-ink/60">{active.view}</p>
+                    <p className="text-sm leading-relaxed text-ink/60">{active.summary}</p>
 
                     <ul className="flex flex-col gap-3">
                       {active.can.slice(0, 3).map((item) => (

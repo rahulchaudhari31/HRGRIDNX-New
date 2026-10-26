@@ -66,7 +66,7 @@ export function Navbar() {
             Login
           </a>
           <Button to="/contact" variant="primary" size="sm">
-            Start free trial
+            Start Free Trial
             <ArrowUpRight className="h-4 w-4" />
           </Button>
         </div>
@@ -110,7 +110,7 @@ export function Navbar() {
               ))}
               <div className="mt-4 flex flex-col gap-2">
                 <Button to="/contact" variant="primary" className="w-full" onClick={() => setOpen(false)}>
-                  Start free trial
+                  Start Free Trial
                 </Button>
                 <a
                   href={loginUrl}

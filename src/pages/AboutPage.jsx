@@ -175,7 +175,7 @@ export function AboutPage() {
               {
                 id: 'terms',
                 title: 'Terms of service',
-                body: 'Your data stays yours. Export everything, delete anything, and cancel with one call. We are plain-spoken about what HRGRIDNX does and which module owns each record.',
+                body: 'Your data stays yours. Export everything, delete anything, and cancel with one call. We are plain-spoken about what HRGridNX does and which module owns each record.',
               },
             ].map((item) => (
               <Reveal key={item.id}>

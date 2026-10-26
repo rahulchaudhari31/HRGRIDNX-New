@@ -16,7 +16,6 @@ export function Cta() {
         <Reveal>
           <h2 className="font-display text-4xl leading-[1.05] text-paper sm:text-5xl md:text-[3.5rem]">
             {cta.title}
-            <span className="block italic text-coral">Every role, one grid.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.1}>

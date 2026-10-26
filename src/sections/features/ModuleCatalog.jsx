@@ -3,7 +3,7 @@ import { Check } from 'lucide-react'
 import { Container } from '../../components/Container'
 import { Reveal } from '../../components/Reveal'
 import { Icon } from '../../lib/icons'
-import { features, modules } from '../../lib/content'
+import { modules } from '../../lib/content'
 import { cn } from '../../lib/cn'
 
 export function ModuleCatalog() {
@@ -59,12 +59,6 @@ export function ModuleCatalog() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#permission-note"
-                className="mx-2 mt-3 block rounded-xl border border-deep/15 bg-mint/40 px-3 py-2.5 text-xs font-medium text-deep transition-colors hover:bg-mint/70"
-              >
-                Permission keys, not guesswork →
-              </a>
             </nav>
           </aside>
 
@@ -88,7 +82,7 @@ export function ModuleCatalog() {
 
                     <div className="flex-1">
                       <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/40">
-                        Module {String(i + 1).padStart(2, '0')} · {mod.id}
+                        Module {String(i + 1).padStart(2, '0')}
                       </span>
                       <h2 className="mt-1.5 font-display text-3xl text-ink sm:text-4xl">
                         {mod.name}
@@ -113,34 +107,6 @@ export function ModuleCatalog() {
               </Reveal>
             ))}
 
-            <Reveal delay={0.1}>
-              <div
-                id="permission-note"
-                className="relative mt-2 scroll-mt-28 overflow-hidden rounded-2xl border border-deep/15 bg-mint/50 p-8 md:p-10"
-              >
-                <div className="grid-lines-mint absolute inset-0 opacity-40" aria-hidden="true" />
-                <div className="relative flex flex-col items-start gap-3 md:flex-row md:items-center md:justify-between">
-                  <div className="max-w-xl">
-                    <h3 className="font-display text-2xl text-deep">Permission keys, not guesswork</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-deep/75">
-                      {features.permissionNote}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {['employee.create', 'leave.approve.level1', 'payroll.release', 'expense.approve'].map(
-                      (key) => (
-                        <code
-                          key={key}
-                          className="rounded-lg border border-deep/15 bg-paper px-3 py-1.5 font-mono text-xs text-deep"
-                        >
-                          {key}
-                        </code>
-                      ),
-                    )}
-                  </div>
-                </div>
-              </div>
-            </Reveal>
           </div>
         </div>
       </Container>

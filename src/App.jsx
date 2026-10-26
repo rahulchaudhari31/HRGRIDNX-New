@@ -23,32 +23,32 @@ const NotFoundPage = lazy(() =>
 
 const metas = {
   '/': {
-    title: 'HRGRIDNX — Role-based HR, on one grid',
+    title: 'HRGridNX — Every person. Every role. One grid.',
     description:
-      'Six roles, nine modules, one source of truth — leave, attendance, tasks, payroll, expenses, documents and reports on one grid.',
+      'HRGridNX brings your people, leave, attendance, tasks, payroll, and documents into one connected HR platform. Every team works from the same records, with access and responsibilities defined by their role.',
   },
   '/features': {
-    title: 'Features · HRGRIDNX',
+    title: 'Features · HRGridNX',
     description:
-      'Nine modules — employees, departments, leave, attendance, tasks, payroll, expenses, documents and reports — each behind named permission keys.',
+      'Nine modules — employees, departments, leave, attendance, tasks, payroll, expenses, documents and reports — connected through one shared dataset.',
   },
   '/roles': {
-    title: 'Roles · HRGRIDNX',
+    title: 'Roles · HRGridNX',
     description:
-      'Six roles, one grid: Admin, HR Manager, Department Head, Finance Manager, Team Leader and Employee each see only their own square of the grid.',
+      'Six roles, one grid: Admin, HR Manager, Department Head, Finance Manager, Team Leader and Employee each see the information and actions relevant to their responsibilities.',
   },
   '/pricing': {
-    title: 'Pricing · HRGRIDNX',
+    title: 'Pricing · HRGridNX',
     description:
       'Simple per-person pricing scaled to the grid. Every plan includes all nine modules and role-based access.',
   },
   '/about': {
-    title: 'About · HRGRIDNX',
+    title: 'About · HRGridNX',
     description:
-      'We made the grid before the software. A role-first HR platform built so each role meets only the work that belongs to it.',
+      'A role-first HR platform built so each role meets only the work that belongs to it.',
   },
   '/contact': {
-    title: 'Contact · HRGRIDNX',
+    title: 'Contact · HRGridNX',
     description:
       'Start a free trial, ask a question, or tell us about your organisation. We reply within one working day.',
   },

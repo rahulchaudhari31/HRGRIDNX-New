@@ -1,6 +1,7 @@
 import { ArrowUpRight } from 'lucide-react'
 import { Container } from '../../components/Container'
 import { SectionHeading } from '../../components/SectionHeading'
+import { Button } from '../../components/Button'
 import { Reveal } from '../../components/Reveal'
 import { Icon } from '../../lib/icons'
 import { modules } from '../../lib/content'
@@ -18,18 +19,6 @@ const spans = {
 }
 
 const bigIds = new Set(['employees', 'payroll'])
-
-const permissionKeys = {
-  employees: 'employee.create',
-  departments: 'department.manage',
-  leave: 'leave.approve.level1',
-  attendance: 'attendance.read',
-  tasks: 'task.assign',
-  payroll: 'payroll.release',
-  expenses: 'expense.approve',
-  documents: 'documents.view.private',
-  reports: 'report.cut',
-}
 
 function BigTileFlourish({ id, className }) {
   if (id === 'payroll') {
@@ -82,7 +71,7 @@ export function Modules() {
               <span className="italic text-deep">nine ways in</span>
             </>
           }
-          description="Employees, departments, leave, attendance, tasks, payroll, expenses, documents and reports — every module reads the same records, so nothing is ever re-keyed."
+          description="HRGridNX connects the everyday processes that keep your organisation running. Each module works with shared records, helping reduce duplicate data entry and inconsistencies between departments."
         />
 
         <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -151,10 +140,9 @@ export function Modules() {
                       </span>
                     </>
                   ) : (
-                    <span className="pointer-events-none mt-auto inline-flex items-center gap-2 border-t border-ink/[0.06] pt-3 text-[11px] font-medium text-ink/50 transition-colors group-hover:text-deep">
-                      <code className="rounded-md bg-ink/[0.05] px-2 py-0.5 font-mono text-[10px] text-deep">
-                        {permissionKeys[mod.id]}
-                      </code>
+                    <span className="pointer-events-none mt-auto inline-flex items-center gap-1 border-t border-ink/[0.06] pt-3 text-[11px] font-medium text-ink/50 transition-colors group-hover:text-deep">
+                      Shared by every role
+                      <ArrowUpRight className="h-3 w-3" />
                     </span>
                   )}
                 </article>
@@ -164,13 +152,10 @@ export function Modules() {
         </div>
 
         <Reveal delay={0.2} className="mt-12 text-center">
-          <p className="text-sm text-ink/50">
-            Nine modules, each behind named permission keys like{' '}
-            <code className="rounded-md bg-ink/5 px-2 py-1 font-mono text-xs text-deep">
-              leave.approve.level1
-            </code>{' '}
-            — never a guess about what a role can see.
-          </p>
+          <Button to="/features" variant="outline" size="lg">
+            Explore All Features
+            <ArrowUpRight className="h-4 w-4" />
+          </Button>
         </Reveal>
       </Container>
     </section>

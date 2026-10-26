@@ -18,9 +18,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  ::selection {
-    @apply bg-coral text-paper;
-  }
 
   /* A guaranteed, visible focus ring for keyboard users everywhere. */
   :focus-visible {
@@ -37,6 +34,7 @@
 }
 
 @layer utilities {
+
   /* The grid — the signature motif. 1px lines over any surface. */
   .grid-lines {
     background-image:
@@ -74,35 +72,36 @@
   }
 
   /* Slow, seamless logo marquee. */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
 
-.animate-marquee {
-  animation: marquee 44s linear infinite;
-}
+    to {
+      transform: translateX(-50%);
+    }
+  }
 
-@media (prefers-reduced-motion: reduce) {
   .animate-marquee {
-    animation: none;
+    animation: marquee 44s linear infinite;
   }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+    }
 
-/* Soft masks so grids fade out instead of ending hard. */
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Soft masks so grids fade out instead of ending hard. */
   .mask-fade-b {
     mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);

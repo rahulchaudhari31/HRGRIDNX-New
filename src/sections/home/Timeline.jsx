@@ -18,7 +18,7 @@ export function Timeline() {
               <span className="italic text-deep">in three moves</span>
             </>
           }
-          description="HRGRIDNX does not ask you to re-model your company. It gives shape to the structure you already have."
+          description="Get your organisation connected in three steps."
         />
 
         <div className="relative mt-16">

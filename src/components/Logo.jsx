@@ -6,7 +6,7 @@ export function Logo({ className, mark = true }) {
     <Link
       to="/"
       className={cn('inline-flex items-center gap-2.5', className)}
-      aria-label="HRGRIDNX home"
+      aria-label="HRGridNX home"
     >
       {mark ? (
         <span className="grid h-8 w-8 shrink-0 grid-cols-2 grid-rows-2 gap-[3px] rounded-[10px] bg-deep p-[5px]">
@@ -16,7 +16,7 @@ export function Logo({ className, mark = true }) {
           <span className="rounded-[2.5px] bg-coral" />
         </span>
       ) : null}
-      <span className="text-lg font-semibold tracking-tightest">HRGRIDNX</span>
+      <span className="text-lg font-semibold tracking-tightest">HRGridNX</span>
     </Link>
   )
 }
