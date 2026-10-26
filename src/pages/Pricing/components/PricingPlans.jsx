@@ -32,7 +32,7 @@ export function PricingPlans({ annual }) {
                         plan.highlight ? 'bg-coral text-paper' : 'bg-mint text-deep',
                       )}
                     >
-                      {plan.highlight ? 'Most popular' : Plan 0}
+                      {plan.highlight ? 'Most popular' : `Plan ${i + 1}`}
                     </span>
                     <h2 className="font-display text-3xl">{plan.name}</h2>
                     <p

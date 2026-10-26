@@ -9,7 +9,7 @@ export function Mission() {
           <Reveal>
             <p className="mx-auto max-w-3xl text-balance text-center font-display text-3xl leading-[1.15] text-ink md:text-5xl">
               {about.mission}
-              <span className="block italic text-deep">— that is the grid.</span>
+              <span className="block italic text-deep">â€” that is the grid.</span>
             </p>
           </Reveal>
           <Reveal delay={0.1}>
