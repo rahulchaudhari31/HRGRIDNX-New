@@ -8,8 +8,6 @@ import { Icon } from '../lib/icons'
 import { about } from '../lib/content'
 import { cn } from '../lib/cn'
 
-const avatarThemes = ['bg-deep text-paper', 'bg-coral text-paper', 'bg-mint text-deep', 'bg-ink text-paper', 'bg-deep/80 text-paper', 'bg-coral/80 text-paper']
-
 export function AboutPage() {
   return (
     <>
@@ -27,13 +25,12 @@ export function AboutPage() {
           <Reveal>
             <p className="mx-auto max-w-3xl text-balance text-center font-display text-3xl leading-[1.15] text-ink md:text-5xl">
               {about.mission}
-              <span className="block italic text-deep">— that is the grid.</span>
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="mx-auto mt-14 max-w-4xl rounded-2xl border border-ink/[0.07] bg-paper/70 p-8 md:p-12">
               <span className="rounded-full bg-mint px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-deep">
-                The origin
+                {about.missionLabel}
               </span>
               <p className="mt-5 font-display text-2xl leading-snug text-ink md:text-3xl">
                 {about.story}
@@ -47,11 +44,11 @@ export function AboutPage() {
       <section className="relative py-16 md:py-24">
         <Container>
           <SectionHeading
-            eyebrow="The values"
+            eyebrow={about.valuesEyebrow}
             title={
               <>
-                Four things,{' '}
-                <span className="italic text-deep">we will not trade</span>
+                {about.valuesTitleA},{' '}
+                <span className="italic text-deep">{about.valuesTitleB}</span>
               </>
             }
           />
@@ -79,13 +76,14 @@ export function AboutPage() {
         <Container className="relative">
           <SectionHeading
             dark
-            eyebrow="Timeline"
+            eyebrow={about.timelineEyebrow}
             title={
               <>
-                From a notebook{' '}
-                <span className="italic text-coral">to the grid</span>
+                {about.timelineTitleA}{' '}
+                <span className="italic text-coral">{about.timelineTitleB}</span>
               </>
             }
+            description={about.timelineDescription}
           />
 
           <div className="relative mx-auto mt-14 max-w-2xl">
@@ -119,35 +117,32 @@ export function AboutPage() {
       <section className="relative py-16 md:py-24">
         <Container>
           <SectionHeading
-            eyebrow="The team"
+            eyebrow={about.teamEyebrow}
             title={
               <>
-                The people{' '}
-                <span className="italic text-deep">behind the squares</span>
+                {about.teamTitleA}{' '}
+                <span className="italic text-deep">{about.teamTitleB}</span>
               </>
             }
-            description="Builders, designers and people-ops who got tired of HR tools showing everyone the same screen."
+            description={about.teamDescription}
           />
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {about.team.map((member, i) => (
-              <Reveal key={member.name} delay={i * 0.05}>
-                <article className="group flex items-center gap-4 rounded-2xl border border-ink/[0.07] bg-paper/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-deep/20 hover:shadow-lift">
-                  <span
-                    className={cn(
-                      'inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-sm font-semibold',
-                      avatarThemes[i % avatarThemes.length],
-                    )}
-                  >
-                    {member.initials}
-                  </span>
-                  <div className="flex flex-col gap-0.5">
-                    <h3 className="text-base font-semibold text-ink">{member.name}</h3>
-                    <p className="text-sm text-ink/50">{member.role}</p>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+          {about.team.length > 0 ? (
+            <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {about.team.map((member, i) => (
+                <Reveal key={member.name} delay={i * 0.05}>
+                  <article className="group flex items-center gap-4 rounded-2xl border border-ink/[0.07] bg-paper/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-deep/20 hover:shadow-lift">
+                    <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-deep text-sm font-semibold text-paper">
+                      {member.initials}
+                    </span>
+                    <div className="flex flex-col gap-0.5">
+                      <h3 className="text-base font-semibold text-ink">{member.name}</h3>
+                      <p className="text-sm text-ink/50">{member.role}</p>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          ) : null}
         </Container>
       </section>
 

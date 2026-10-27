@@ -1,11 +1,12 @@
-import { Check, Sunrise } from 'lucide-react'
+import { Check, ListChecks } from 'lucide-react'
 import { Container } from '../../components/Container'
+import { Button } from '../../components/Button'
 import { Reveal } from '../../components/Reveal'
 import { Icon } from '../../lib/icons'
 import { roles, rolesPage } from '../../lib/content'
 import { cn } from '../../lib/cn'
 
-function DayCard({ dark, moments }) {
+function ResponsibilitiesCard({ dark, role }) {
   return (
     <div
       className={cn(
@@ -25,8 +26,8 @@ function DayCard({ dark, moments }) {
               dark ? 'text-paper/60' : 'text-ink/50',
             )}
           >
-            <Sunrise className={cn('h-4 w-4', dark ? 'text-coral' : 'text-deep')} />
-            A day in the life
+            <ListChecks className={cn('h-4 w-4', dark ? 'text-coral' : 'text-deep')} />
+            Typical responsibilities
           </span>
           <span
             className={cn(
@@ -34,43 +35,27 @@ function DayCard({ dark, moments }) {
               dark ? 'bg-paper/10 text-paper/70' : 'bg-mint text-deep',
             )}
           >
-            Today
+            {role.name}
           </span>
         </div>
 
-        <div className="mt-6 flex flex-col">
-          {moments.map((moment, i) => (
-            <div key={i} className="relative flex gap-4 pb-6 last:pb-0">
-              {i < moments.length - 1 ? (
-                <span
-                  className={cn(
-                    'absolute left-[3.5px] top-5 h-full w-px',
-                    dark ? 'bg-paper/15' : 'bg-ink/10',
-                  )}
-                />
-              ) : null}
+        <ul className="mt-6 flex flex-col gap-4">
+          {role.can.map((item) => (
+            <li key={item} className="flex items-start gap-3">
               <span
                 className={cn(
-                  'relative z-10 mt-1 h-2 w-2 shrink-0 rounded-full',
-                  dark ? 'bg-coral' : 'bg-deep',
+                  'mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full',
+                  dark ? 'bg-coral text-paper' : 'bg-deep text-paper',
                 )}
-              />
-              <div className="flex flex-col gap-0.5">
-                <span
-                  className={cn(
-                    'text-[11px] font-semibold uppercase tracking-[0.16em]',
-                    dark ? 'text-paper/50' : 'text-ink/40',
-                  )}
-                >
-                  {moment.split('·')[0].trim()}
-                </span>
-                <span className={cn('text-sm leading-snug', dark ? 'text-paper/85' : 'text-ink/75')}>
-                  {moment.split('·')[1].trim()}
-                </span>
-              </div>
-            </div>
+              >
+                <Check className="h-3 w-3" strokeWidth={3} />
+              </span>
+              <span className={cn('text-sm leading-snug', dark ? 'text-paper/85' : 'text-ink/75')}>
+                {item}
+              </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   )
@@ -79,6 +64,30 @@ function DayCard({ dark, moments }) {
 export function RoleDetails() {
   return (
     <>
+      <section className="relative py-16 md:py-20">
+        <Container>
+          <Reveal>
+            <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+              <h2 className="font-display text-4xl leading-[1.05] text-ink sm:text-5xl md:text-[3.5rem]">
+                One grid.{' '}
+                <span className="italic text-deep">Six vantage points.</span>
+              </h2>
+              <p className="max-w-2xl text-pretty text-base leading-relaxed text-ink/65 sm:text-lg">
+                {rolesPage.introBody}
+              </p>
+              <div className="mt-2 flex flex-col items-center gap-3 sm:flex-row">
+                <Button href="#admin" variant="outline" size="md">
+                  See How Roles Work
+                </Button>
+                <Button to="/contact" variant="primary" size="md">
+                  Start Free Trial
+                </Button>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
       {roles.map((role, i) => {
         const dark = i % 2 === 0
         return (
@@ -104,7 +113,7 @@ export function RoleDetails() {
                     !dark && 'lg:[&>*:first-child]:order-2',
                   )}
                 >
-                  {/* day-in-the-life preview */}
+                  {/* responsibilities preview */}
                   <div className="relative">
                     <span
                       className={cn(
@@ -115,7 +124,7 @@ export function RoleDetails() {
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <div className="-mt-8 sm:-mt-10">
-                      <DayCard dark={dark} moments={role.moments} />
+                      <ResponsibilitiesCard dark={dark} role={role} />
                     </div>
                   </div>
 
@@ -170,16 +179,13 @@ export function RoleDetails() {
                           dark ? 'text-coral' : 'text-deep',
                         )}
                       >
-                        A day in the life
+                        Typical responsibilities
                       </p>
-                      <p className={cn('mt-2 text-sm leading-relaxed', dark ? 'text-paper/80' : 'text-ink/70')}>
-                        {role.day}
-                      </p>
-                      <ul className="mt-4 flex flex-col gap-2">
-                        {role.moments.map((moment) => (
-                          <li key={moment} className="flex items-start gap-2.5 text-sm">
+                      <ul className="mt-3 flex flex-col gap-2">
+                        {role.can.map((item) => (
+                          <li key={item} className="flex items-start gap-2.5 text-sm">
                             <Check className={cn('mt-0.5 h-4 w-4 shrink-0', dark ? 'text-coral' : 'text-deep')} />
-                            <span className={dark ? 'text-paper/80' : 'text-ink/70'}>{moment}</span>
+                            <span className={dark ? 'text-paper/80' : 'text-ink/70'}>{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -206,6 +212,10 @@ export function RoleDetails() {
                         {role.sees.length} views
                       </span>
                     </div>
+
+                    <Button to={role.cta.to} variant={dark ? 'light' : 'dark'} size="md">
+                      {role.cta.label}
+                    </Button>
                   </div>
                 </div>
               </Reveal>

@@ -91,10 +91,9 @@ function TrialForm() {
         ) : (
           <form onSubmit={submit} noValidate className="flex flex-col gap-5">
             <div>
-              <h2 className="font-display text-3xl text-ink">Start free trial</h2>
-              <p className="mt-2 text-sm text-ink/60">
-                Six roles, one grid, on your terms. No card required.
-              </p>
+              <h2 className="font-display text-3xl text-ink">{contact.form.heading}</h2>
+              <p className="mt-2 text-sm text-ink/60">{contact.form.blurb}</p>
+              <p className="mt-1 text-sm text-ink/60">{contact.form.subBlurb}</p>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
@@ -141,7 +140,7 @@ function TrialForm() {
                   </option>
                   {contact.form.teamSizes.map((size) => (
                     <option key={size} value={size} className="text-ink">
-                      {size} people
+                      {size}
                     </option>
                   ))}
                 </select>
@@ -184,7 +183,7 @@ export function ContactPage() {
         titleA={contact.titleA}
         titleB={contact.titleB}
         description={contact.description}
-        note={contact.info.map((i) => i.value).join(' · ')}
+        note={contact.response}
       />
 
       <section className="relative pb-24 pt-6">
