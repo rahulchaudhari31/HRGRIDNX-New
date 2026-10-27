@@ -183,7 +183,6 @@ export function ContactPage() {
         titleA={contact.titleA}
         titleB={contact.titleB}
         description={contact.description}
-        note={contact.response}
       />
 
       <section className="relative pb-24 pt-6">

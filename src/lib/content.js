@@ -333,7 +333,7 @@ export const rolesPage = {
     description: 'HRGridNX uses permission-based access to help ensure that users see and perform only the actions assigned to their roles. This approach helps establish clearer boundaries between employee self-service, management activities and administrative responsibilities.',
     introTitle: 'One grid. Six vantage points.',
     introBody: 'Every organisation has different responsibilities. HRGridNX gives each user a role-based view of the platform, connecting the information they need with the actions they are authorised to take.',
-    roleNote: 'Every role has a place on the grid. Give your team a shared platform with individual access based on its responsibilities.',
+    roleNote: '',
 };
 /* ----------------------------- PRICING page ----------------------------- */
 export const pricing = {
@@ -483,14 +483,14 @@ export const about = {
     teamTitleB: 'behind the squares',
     teamDescription: 'Technology works best when it serves people. HRGridNX is built around the people who keep an organisation moving, from administrators and HR teams to department heads, finance managers, team leaders and employees. Our aim is to give every role a clear place within the same connected system.',
     team: [],
-    statLine: 'We believe the best HR software is the kind people stop noticing. The grid gets out of the way — because every role already knows its square.',
+    statLine: 'The PDF contains a team section with names and roles. Confirm the current team members, job titles and consent before publishing individual profiles.',
 };
 /* ----------------------------- CONTACT page ----------------------------- */
 export const contact = {
     eyebrow: 'Contact',
     titleA: 'Step onto',
     titleB: 'the grid.',
-    description: "Tell us about your organisation and how your teams work. We'll help you explore whether HRGridNX is the right fit for your HR processes.",
+    description: "Tell us about your organisation and how your teams work. We'll help you explore whether HRGridNX is the right fit for your HR processes. We aim to respond within one working day.",
     response: 'We aim to respond within one working day.',
     info: [
         { icon: 'mail', label: 'Email', value: brand.email, href: `mailto:${brand.email}` },

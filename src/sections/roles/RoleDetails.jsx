@@ -224,15 +224,17 @@ export function RoleDetails() {
         )
       })}
 
-      <section className="relative py-16">
-        <Container>
-          <Reveal>
-            <p className="mx-auto max-w-2xl text-balance text-center text-sm leading-relaxed text-ink/50 md:text-base">
-              {rolesPage.roleNote}
-            </p>
-          </Reveal>
-        </Container>
-      </section>
+      {rolesPage.roleNote ? (
+        <section className="relative py-16">
+          <Container>
+            <Reveal>
+              <p className="mx-auto max-w-2xl text-balance text-center text-sm leading-relaxed text-ink/50 md:text-base">
+                {rolesPage.roleNote}
+              </p>
+            </Reveal>
+          </Container>
+        </section>
+      ) : null}
     </>
   )
 }
