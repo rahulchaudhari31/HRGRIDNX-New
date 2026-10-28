@@ -3,7 +3,6 @@ import { PageHero } from '../sections/PageHero'
 import { Reveal } from '../components/Reveal'
 import { GridBackground } from '../components/GridBackground'
 import { SectionHeading } from '../components/SectionHeading'
-import { Cta } from '../sections/Cta'
 import { Icon } from '../lib/icons'
 import { about } from '../lib/content'
 import { cn } from '../lib/cn'
@@ -47,7 +46,7 @@ export function AboutPage() {
             eyebrow={about.valuesEyebrow}
             title={
               <>
-                {about.valuesTitleA},{' '}
+                {about.valuesTitleA}{' '}
                 <span className="italic text-deep">{about.valuesTitleB}</span>
               </>
             }
@@ -146,45 +145,6 @@ export function AboutPage() {
         </Container>
       </section>
 
-      {/* stat line */}
-      <section className="relative pb-16 md:pb-24">
-        <Container>
-          <Reveal>
-            <p className="mx-auto max-w-2xl text-balance text-center font-display text-2xl leading-snug text-deep md:text-3xl">
-              {about.statLine}
-            </p>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* privacy & terms */}
-      <section className="relative pb-6">
-        <Container>
-          <div className="grid gap-4 rounded-2xl border border-ink/[0.07] bg-paper/70 p-8 md:grid-cols-2 md:p-10">
-            {[
-              {
-                id: 'privacy',
-                title: 'Privacy',
-                body: 'Role-scoped access is the privacy model. A department head sees the department, an employee sees their own file, and sensitive documents are locked to the people who may see them.',
-              },
-              {
-                id: 'terms',
-                title: 'Terms of service',
-                body: 'Your data stays yours. Export everything, delete anything, and cancel with one call. We are plain-spoken about what HRGridNX does and which module owns each record.',
-              },
-            ].map((item) => (
-              <Reveal key={item.id}>
-                <div id={item.id} className="scroll-mt-28">
-                  <h2 className="font-display text-2xl text-ink">{item.title}</h2>
-                  <p className="mt-3 text-sm leading-relaxed text-ink/60">{item.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <Cta />
     </>
   )
 }

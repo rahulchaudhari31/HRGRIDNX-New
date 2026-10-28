@@ -82,11 +82,12 @@ export function ModuleCatalog() {
 
                     <div className="flex-1">
                       <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-ink/40">
-                        Module {String(i + 1).padStart(2, '0')}
+                        Module {i + 1}
                       </span>
                       <h2 className="mt-1.5 font-display text-3xl text-ink sm:text-4xl">
                         {mod.name}
                       </h2>
+                      <p className="mt-2 text-sm font-medium text-deep">{mod.blurb}</p>
                       <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/65 md:text-base">
                         {mod.detail}
                       </p>

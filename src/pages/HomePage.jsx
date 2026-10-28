@@ -4,6 +4,7 @@ import { Modules } from '../sections/home/Modules'
 import { Timeline } from '../sections/home/Timeline'
 import { Security } from '../sections/home/Security'
 import { Cta } from '../sections/Cta'
+import { homeCta } from '../lib/content'
 
 export function HomePage() {
   return (
@@ -13,7 +14,7 @@ export function HomePage() {
       <Modules />
       <Timeline />
       <Security />
-      <Cta />
+      <Cta data={homeCta} />
     </>
   )
 }

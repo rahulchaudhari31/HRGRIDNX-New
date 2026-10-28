@@ -5,7 +5,7 @@ import { GridBackground } from '../components/GridBackground'
 import { Reveal } from '../components/Reveal'
 import { cta } from '../lib/content'
 
-export function Cta() {
+export function Cta({ data = cta }) {
   return (
     <section id="cta" className="relative overflow-hidden bg-deep py-24 md:py-32">
       <GridBackground variant="light" className="mask-fade-b opacity-70" />
@@ -15,21 +15,21 @@ export function Cta() {
       <Container className="relative flex flex-col items-center gap-6 text-center">
         <Reveal>
           <h2 className="font-display text-4xl leading-[1.05] text-paper sm:text-5xl md:text-[3.5rem]">
-            {cta.title}
+            {data.title}
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="max-w-2xl text-pretty text-base leading-relaxed text-paper/70 sm:text-lg">
-            {cta.body}
+            {data.body}
           </p>
         </Reveal>
         <Reveal delay={0.2} className="flex flex-col items-center gap-4 sm:flex-row">
-          <Button to={cta.primary.to} variant="primary" size="lg">
-            {cta.primary.label}
+          <Button to={data.primary.to} variant="primary" size="lg">
+            {data.primary.label}
             <ArrowUpRight className="h-4 w-4" />
           </Button>
-          <Button href={cta.secondary.href} variant="light" size="lg">
-            {cta.secondary.label}
+          <Button href={data.secondary.href} variant="light" size="lg">
+            {data.secondary.label}
           </Button>
         </Reveal>
       </Container>

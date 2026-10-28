@@ -15,7 +15,6 @@ export const brand = {
 export const navLinks = [
     { label: 'Features', to: '/features' },
     { label: 'Roles', to: '/roles' },
-    { label: 'Pricing', to: '/pricing' },
     { label: 'About', to: '/about' },
     { label: 'Contact', to: '/contact' },
 ];
@@ -163,6 +162,7 @@ export const roles = [
         id: 'admin',
         name: 'Admin',
         short: 'Owns the structure of the grid.',
+        portal: 'Manage the platform, users and permissions.',
         icon: 'crown',
         summary: 'Administrators oversee platform configuration, user access and permissions, helping maintain the structure and integrity of the system.',
         sees: ['Employees', 'Departments', 'Leave', 'Attendance', 'Tasks', 'Payroll', 'Expenses', 'Documents', 'Reports'],
@@ -178,6 +178,7 @@ export const roles = [
         id: 'hr_manager',
         name: 'HR Manager',
         short: 'Own the people layer.',
+        portal: 'Maintain employee records, leave and HR documentation.',
         icon: 'user-cog',
         summary: 'HR managers maintain employee information and coordinate essential HR activities through a shared workspace.',
         sees: ['Employees', 'Departments', 'Leave', 'Attendance', 'Documents', 'Reports'],
@@ -193,6 +194,7 @@ export const roles = [
         id: 'department_head',
         name: 'Department Head',
         short: 'Manage your department in one view.',
+        portal: 'Oversee departmental people, approvals and responsibilities.',
         icon: 'landmark',
         summary: 'Department heads can focus on their own teams, with visibility into relevant people, approvals and operational responsibilities.',
         sees: ['Employees', 'Departments', 'Leave', 'Attendance', 'Tasks'],
@@ -208,6 +210,7 @@ export const roles = [
         id: 'finance_manager',
         name: 'Finance Manager',
         short: 'Keep the financial records aligned.',
+        portal: 'Manage payroll, expenses and financial records.',
         icon: 'scale',
         summary: 'Finance managers work with payroll and expense information maintained across the organisation, helping reduce the need to reconcile duplicated records.',
         sees: ['Payroll', 'Expenses', 'Employees', 'Documents', 'Reports'],
@@ -223,6 +226,7 @@ export const roles = [
         id: 'team_leader',
         name: 'Team Leader',
         short: 'Keep your team moving.',
+        portal: 'Coordinate team tasks, attendance and leave.',
         icon: 'users-round',
         summary: "Team leaders get a focused view of their team's work and availability, helping them coordinate tasks and manage day-to-day responsibilities.",
         sees: ['Tasks', 'Employees', 'Attendance', 'Leave'],
@@ -238,6 +242,7 @@ export const roles = [
         id: 'employee',
         name: 'Employee',
         short: 'Your work information, in one place.',
+        portal: 'Access personal information, documents and payslips.',
         icon: 'circle-user',
         summary: 'Employees can access their own relevant information without having to rely on managers for every routine request.',
         sees: ['My leave', 'My attendance', 'My payslips', 'Documents'],
@@ -312,6 +317,12 @@ export const testimonials = [
     },
 ];
 /* ------------------------------- HOME: CTA ------------------------------ */
+export const homeCta = {
+    title: 'Every role on the grid.',
+    body: 'Start with HRGridNX and bring your people, leave, attendance, tasks, payroll and documents into one connected workspace.',
+    primary: { label: 'Start Free Trial', to: '/contact' },
+    secondary: { label: 'Contact Our Team', href: 'mailto:hello@hrgridnx.com' },
+};
 export const cta = {
     title: 'Every role has a place on the grid.',
     body: 'Give your team a shared platform with individual access based on its responsibilities.',
@@ -483,7 +494,6 @@ export const about = {
     teamTitleB: 'behind the squares',
     teamDescription: 'Technology works best when it serves people. HRGridNX is built around the people who keep an organisation moving, from administrators and HR teams to department heads, finance managers, team leaders and employees. Our aim is to give every role a clear place within the same connected system.',
     team: [],
-    statLine: 'The PDF contains a team section with names and roles. Confirm the current team members, job titles and consent before publishing individual profiles.',
 };
 /* ----------------------------- CONTACT page ----------------------------- */
 export const contact = {
@@ -510,16 +520,6 @@ export const contact = {
         submit: 'Start Free Trial',
         thanks: 'Thanks — your enquiry is on the grid. We aim to respond within one working day.',
     },
-    faq: [
-        {
-            q: 'How soon can we start?',
-            a: 'Most teams map their roles and are on the grid within the week.',
-        },
-        {
-            q: 'Can we bring our own role structures?',
-            a: 'Yes. Mapping your departments, teams and permission sets is part of onboarding.',
-        },
-    ],
 };
 export const footer = {
     tagline: 'HR·GRID·NX — every person. Every role. One grid.',
@@ -542,6 +542,7 @@ export const footer = {
                 { label: 'HR Manager', to: '/roles#hr_manager' },
                 { label: 'Department Head', to: '/roles#department_head' },
                 { label: 'Finance Manager', to: '/roles#finance_manager' },
+                { label: 'Team Leader', to: '/roles#team_leader' },
                 { label: 'Employee', to: '/roles#employee' },
             ],
         },
@@ -551,7 +552,6 @@ export const footer = {
                 { label: 'About', to: '/about' },
                 { label: 'Features', to: '/features' },
                 { label: 'Roles', to: '/roles' },
-                { label: 'Pricing', to: '/pricing' },
                 { label: 'Contact', to: '/contact' },
             ],
         },
@@ -560,8 +560,6 @@ export const footer = {
             links: [
                 { label: 'Start free trial', to: '/contact' },
                 { label: 'Sign in', href: loginUrl },
-                { label: 'Privacy', to: '/about#privacy' },
-                { label: 'Terms', to: '/about#terms' },
             ],
         },
     ],

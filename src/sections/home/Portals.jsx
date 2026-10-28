@@ -116,7 +116,7 @@ export function Portals() {
                           active.id === role.id ? 'text-paper/60' : 'text-ink/40',
                         )}
                       >
-                        {role.short}
+                        {role.portal}
                       </span>
                     </span>
                     <span
@@ -149,7 +149,7 @@ export function Portals() {
                       <div>
                         <h3 className="font-display text-2xl text-ink">{active.name}</h3>
                         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-deep">
-                          {active.short}
+                          {active.portal}
                         </p>
                       </div>
                     </div>

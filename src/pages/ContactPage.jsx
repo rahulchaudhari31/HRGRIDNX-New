@@ -190,6 +190,7 @@ export function ContactPage() {
           <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
             <Reveal className="h-full">
               <div className="flex h-full flex-col gap-4 rounded-2xl border border-ink/[0.07] bg-paper/70 p-8">
+                <h2 className="font-display text-2xl text-ink">Contact information</h2>
                 {contact.info.map((item) => (
                   <div
                     key={item.label}
@@ -213,15 +214,6 @@ export function ContactPage() {
                   </div>
                 ))}
 
-                <div className="mt-auto flex flex-col gap-3 rounded-xl border border-deep/15 bg-mint/50 p-5">
-                  <h3 className="font-display text-xl text-deep">Before you ask</h3>
-                  {contact.faq.map((f) => (
-                    <div key={f.q}>
-                      <p className="text-sm font-semibold text-deep">{f.q}</p>
-                      <p className="mt-0.5 text-sm leading-relaxed text-deep/70">{f.a}</p>
-                    </div>
-                  ))}
-                </div>
               </div>
             </Reveal>
 

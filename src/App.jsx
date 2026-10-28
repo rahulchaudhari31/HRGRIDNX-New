@@ -10,9 +10,6 @@ const FeaturesPage = lazy(() =>
   import('./pages/FeaturesPage').then((m) => ({ default: m.FeaturesPage })),
 )
 const RolesPage = lazy(() => import('./pages/RolesPage').then((m) => ({ default: m.RolesPage })))
-const PricingPage = lazy(() =>
-  import('./pages/PricingPage').then((m) => ({ default: m.PricingPage })),
-)
 const AboutPage = lazy(() => import('./pages/AboutPage').then((m) => ({ default: m.AboutPage })))
 const ContactPage = lazy(() =>
   import('./pages/ContactPage').then((m) => ({ default: m.ContactPage })),
@@ -36,11 +33,6 @@ const metas = {
     title: 'Roles · HRGridNX',
     description:
       'Six roles, one grid: Admin, HR Manager, Department Head, Finance Manager, Team Leader and Employee each see the information and actions relevant to their responsibilities.',
-  },
-  '/pricing': {
-    title: 'Pricing · HRGridNX',
-    description:
-      'Simple per-person pricing scaled to the grid. Every plan includes all nine modules and role-based access.',
   },
   '/about': {
     title: 'About · HRGridNX',
@@ -109,7 +101,6 @@ export default function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/features" element={<FeaturesPage />} />
                 <Route path="/roles" element={<RolesPage />} />
-                <Route path="/pricing" element={<PricingPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="*" element={<NotFoundPage />} />
