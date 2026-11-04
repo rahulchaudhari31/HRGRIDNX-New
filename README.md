@@ -1,91 +1,172 @@
-# HRGRIDNX — Marketing site
+# HRGridNX
 
-The public marketing site for **HRGRIDNX**, a role-based HR management platform.
-Six roles, nine modules, one source of truth — presented as a hand-built,
-grid-themed React experience. No stock photos, no screenshots: every product
-visual is composed from CSS, SVG rings and divs.
+**Every person. Every role. One grid.**
 
-## Stack
+HRGridNX is the public marketing website for a role-based HR management platform. It presents a connected HR experience built around six roles and nine core modules — employees, departments, leave, attendance, tasks, payroll, expenses, documents, and reports.
 
-- **React 19** with modern JavaScript (ES modules, JSX)
-- **Vite 8** build tooling with automatic route-level code splitting
-- **Tailwind CSS 3** with a bespoke design system (`paper`, `ink`, `deep`,
-  `mint`, `coral`) and signature 1px grid-line utilities
-- **Framer Motion** for scroll reveals, floating previews and route/page
-  micro-interactions (honours `prefers-reduced-motion` via `MotionConfig`)
-- **React Router 7** with lazy-loaded routes
-- **lucide-react** for icons
+The site is a hand-built React single-page application with a distinctive grid-themed visual system. Every product visual is composed from CSS, SVG, and divs rather than screenshots or stock photography.
 
-## Project layout
+- **Live website:** [https://hrgridnx.com](https://hrgridnx.com)
+- **GitHub repository:** [https://github.com/rahulchaudhari31/HRGRIDNX-New](https://github.com/rahulchaudhari31/HRGRIDNX-New)
 
+---
+
+## ✨ Features
+
+- **Five routed pages** — Home, Features, Roles, About, and Contact, plus a dedicated 404 page.
+- **Role-based product story** — presents six roles (Admin, HR Manager, Department Head, Finance Manager, Team Leader, Employee) and nine connected HR modules.
+- **Lazy-loaded routes** — page bundles are loaded on demand with React `lazy` and `Suspense`.
+- **Per-route metadata** — document title, description, and Open Graph/Twitter tags update on navigation.
+- **Motion with accessibility in mind** — Framer Motion reveals and transitions honour `prefers-reduced-motion` through `MotionConfig`.
+- **Responsive navigation** — scroll-aware header with an animated mobile menu.
+- **Custom design system** — Tailwind tokens for `paper`, `ink`, `deep`, `mint`, `coral`, and `hairline`, plus signature 1px grid-line utilities.
+- **Centralised content** — all site copy and structured data live in `src/lib/content.js`.
+- **Client-side contact form** — validated enquiry form with an in-page success state (no backend submission).
+- **Accessibility essentials** — skip-to-content link, visible focus rings, and semantic heading structure.
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technology | Version |
+| --- | --- | --- |
+| UI framework | React | `^19.2.8` |
+| DOM renderer | React DOM | `^19.2.8` |
+| Routing | React Router DOM | `^7.18.4` |
+| Build tool | Vite | `^8.3.0` |
+| React plugin | `@vitejs/plugin-react` | `^6.1.1` |
+| Styling | Tailwind CSS | `^3.4.19` |
+| CSS processing | PostCSS + Autoprefixer | `^8.5.28` / `^10.6.1` |
+| Animation | Framer Motion | `^13.4.0` |
+| Icons | lucide-react | `^1.47.0` |
+| Linting | Oxlint | `^1.81.0` |
+| Language | JavaScript (ES Modules, JSX) | — |
+
+---
+
+## 📁 Project Structure
+
+```text
+HRGRIDNX-New/
+├── public/                     Static assets: favicons, logo, and Open Graph image
+├── src/
+│   ├── components/
+│   │   ├── common/             Shared page blocks: Cta, PageHero, GridBackground
+│   │   ├── layout/             Navbar, Footer, ScrollToTop
+│   │   ├── ui/                 Button, Badge, Container, Logo, Reveal, SectionHeading
+│   │   └── *.jsx               Active top-level components used by routed pages
+│   ├── lib/
+│   │   ├── content.js          All site copy, navigation, roles, modules, and pricing data
+│   │   ├── icons.jsx           Icon indirection over lucide-react
+│   │   ├── icons-map.js        Icon name mapping
+│   │   └── cn.js               Small classname joiner
+│   ├── pages/
+│   │   ├── HomePage.jsx        Route entry for /
+│   │   ├── FeaturesPage.jsx    Route entry for /features
+│   │   ├── RolesPage.jsx       Route entry for /roles
+│   │   ├── AboutPage.jsx       Route entry for /about
+│   │   ├── ContactPage.jsx     Route entry for /contact
+│   │   ├── NotFoundPage.jsx    Route entry for unknown paths
+│   │   ├── PricingPage.jsx     Pricing composition (not currently routed)
+│   │   ├── Home/               Home page composition and section components
+│   │   ├── Features/           Features page composition and module catalogue
+│   │   ├── Roles/              Roles page composition and role details
+│   │   ├── About/              About page composition, mission, values, timeline
+│   │   ├── Contact/            Contact page composition and enquiry form
+│   │   ├── Pricing/            Pricing plans and billing toggle components
+│   │   └── NotFound/           404 page composition
+│   ├── sections/
+│   │   ├── home/               Hero, Portals, Modules, Stats, Timeline, Security,
+│   │   │                       Testimonials, and TrustStrip sections
+│   │   ├── features/           ModuleCatalog section
+│   │   ├── roles/              RoleDetails section
+│   │   ├── Cta.jsx             Shared call-to-action section
+│   │   └── PageHero.jsx        Shared inner-page hero
+│   ├── App.jsx                 Router, lazy routes, and per-route meta handling
+│   ├── main.jsx                React application entry point
+│   └── index.css               Tailwind layers, grid utilities, and accessibility rules
+├── index.html                  HTML shell, SEO/Open Graph meta, and web fonts
+├── vite.config.js              Vite configuration with the React plugin
+├── tailwind.config.js          Design tokens, fonts, shadows, and letter spacing
+├── postcss.config.js           Tailwind CSS and Autoprefixer plugins
+├── .oxlintrc.json              Oxlint configuration
+├── package.json                Scripts and dependencies
+└── README.md                   Project documentation
 ```
-src/
-  components/     Shared UI: Button, Container, Logo, Reveal, GridBackground, Navbar, Footer…
-  sections/       Page-level blocks (home hero, pricing plan cards, role day-life…)
-  pages/          Route entry points: Home, Features, Roles, Pricing, About, Contact, 404
-  lib/
-    content.js    All site copy in one place — edit text here, never in UI
-    icons.jsx     Icon indirection over lucide-react
-    cn.js         Tiny classname joiner
-  index.css       Tailwind layers, grid-line utilities, a11y + reduced-motion rules
-```
 
-## Run locally
+---
+
+## 🚀 Getting Started
+
+### 📋 Prerequisites
+
+- **Node.js** `20.19+` or `22.12+` (required by Vite 8)
+- **npm** (bundled with Node.js)
+
+### 📦 Installation
+
+Clone the repository and install dependencies:
 
 ```bash
+git clone https://github.com/rahulchaudhari31/HRGRIDNX-New.git
+cd HRGRIDNX-New
 npm install
-npm run dev       # start dev server (http://localhost:5173)
 ```
 
-## Build & checks
+### ▶️ Run the Development Server
 
 ```bash
-npm run lint      # oxlint
-npm run build     # production build to dist/
-npm run preview   # serve the production build locally
+npm run dev
 ```
 
-## Deploy to Vercel
+Vite starts the development server at [http://localhost:5173](http://localhost:5173) by default.
 
-(**Recommended.** The project ships with zero server code — it is a pure static
-React SPA, so the default Vercel config needs no change.)
-
-### Option A — Vercel dashboard
-
-1. Push this folder to a GitHub/GitLab repo.
-2. In Vercel, **Add New → Project** and import the repo.
-3. Framework preset: **Vite** (auto-detected).
-   - Build command: `npm run build`
-   - Output directory: `dist`
-4. Deploy. Every push to the default branch ships automatically.
-
-### Option B — Vercel CLI
+### 🏗️ Build for Production
 
 ```bash
-npm i -g vercel
-vercel            # preview deploy
-vercel --prod     # production deploy
+npm run build
 ```
 
-### Notes
+The production-ready static files are generated in the `dist/` directory.
 
-- Because the app uses client-side routing with `react-router`, configure the
-  Vercel project for SPA rewrites so deep links like `/features` return
-  `index.html`:
+### 👀 Preview the Production Build
 
-  ```json
-  // vercel.json — optional, Vercel applies this automatically for Vite SPAs
-  {
-    "rewrites": [{ "source": "/((?!assets/|favicon.svg|og-image.svg).*)", "destination": "/index.html" }]
-  }
-  ```
+```bash
+npm run preview
+```
 
-- Set the `index.html` `og:url`/canonical origin to your production domain after
-  launch (`index.html` currently references `https://hrgridnx.com/`).
+This serves the contents of `dist/` locally so you can verify the production build.
 
-## Accessibility & performance
+### 🧹 Lint the Code
 
-- Global visible focus rings, skip-to-content link, semantic heading order.
-- `prefers-reduced-motion` disables CSS animation *and* Framer Motion
-  transitions globally.
-- Routes are lazy-loaded; the main bundle ships shared deps only.
+```bash
+npm run lint
+```
+
+Linting is powered by Oxlint using the rules defined in `.oxlintrc.json`.
+
+---
+
+## 🧑‍💻 Using OpenCode in VS Code
+
+This project can be developed with OpenCode directly inside VS Code.
+
+1. Install the **OpenCode** extension for VS Code.
+2. Open this project folder in VS Code.
+3. Launch OpenCode from the editor or run the following in the integrated terminal:
+
+   ```bash
+   opencode
+   ```
+
+4. Use the assistant to explore the codebase, review changes, and run project commands.
+
+No project-specific OpenCode configuration is required.
+
+---
+
+## 📄 License
+
+This project is proprietary. © 2026 HRGridNX. All rights reserved.
+
+No license file is included in this repository.
